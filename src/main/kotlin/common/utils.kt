@@ -11,6 +11,11 @@ fun readDataFromFile(fileName: String): List<String> {
     return listOfStrings.toList()
 }
 
+fun readDataFromFileString(fileName: String): String {
+    return File(fileName).readText()
+}
+
+
 fun readDataFromFileDay1(fileName: String): Pair<Int, MutableList<Int>> {
     val listOfValues = mutableListOf<Int>()
     var sum = 0
