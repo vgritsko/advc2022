@@ -1,4 +1,4 @@
-import day_06.Solution_1
+import day_07.Solution_1
 
 fun main(args: Array<String>) {
 //    println("Hello World!")
