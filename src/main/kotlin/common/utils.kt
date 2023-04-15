@@ -32,3 +32,5 @@ fun readDataFromFileDay1(fileName: String): Pair<Int, MutableList<Int>> {
 
     return Pair(maxSum, listOfValues)
 }
+
+
