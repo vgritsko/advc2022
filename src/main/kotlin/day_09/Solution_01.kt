@@ -44,7 +44,7 @@ data class Point(val x: Int = 0, val y: Int = 0) {
         (x - other.x).absoluteValue <= 1 && (y - other.y).absoluteValue <= 1
 }
 
-private fun parseInput(input: List<String>): String =
+fun parseInput(input: List<String>): String =
     input.joinToString("") { row ->
         val direction = row.substringBefore(" ")
         val numberOfMoves = row.substringAfter(' ').toInt()

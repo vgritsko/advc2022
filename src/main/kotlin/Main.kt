@@ -1,4 +1,4 @@
-import day_09.Solution_01
+import day_09.Solution_02
 
 fun main(args: Array<String>) {
 //    println("Hello World!")
@@ -7,5 +7,5 @@ fun main(args: Array<String>) {
 //    // Learn more about running applications: https://www.jetbrains.com/help/idea/running-applications.html.
 //    println("Program arguments: ${args.joinToString()}")
   //Solution_2().execute()
-  Solution_01().execute()
+  Solution_02().execute()
 }
