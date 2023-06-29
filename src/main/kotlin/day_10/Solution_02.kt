@@ -1,13 +1,14 @@
 package day_10
 
 import common.readDataFromFile
+import kotlin.math.abs
 
-//https://adventofcode.com/2022/day/10/
+//https://adventofcode.com/2022/day/10/ part II
 
 class Solution_02 {
     private val instructions = readDataFromFile("/home/vgritsko/IdeaProjects/advc2022/src/main/resources/data_day_10_1")
 
-    private val seq = sequence {
+    private val cpuSeq = sequence {
         yield(0)
         instructions.forEach {
             if (it.startsWith("addx")) {
@@ -19,14 +20,21 @@ class Solution_02 {
     }
 
     fun execute() {
-        println(
-            seq
-                .runningFoldIndexed(1) { _, acc, i ->
-                    acc + i
+
+        println(cpuSeq
+            .runningFoldIndexed(1) { index, acc, i -> acc + i }
+            .forEachIndexed { index, i ->
+                val newIndex = (index - 1).mod(40)
+                if (newIndex == 0) {
+                    print('\n')
                 }
-                .mapIndexed { index, i -> index * i }
-                .filterIndexed { index, _ -> index.mod(40) == 20 }
-                .sum()
+                if (abs(newIndex - i) <= 1) {
+                    print('#')
+                } else {
+                    print('.')
+                }
+            }
         )
     }
 }
+
