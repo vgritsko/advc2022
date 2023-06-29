@@ -5,9 +5,9 @@ import common.readDataFromFile
 //https://adventofcode.com/2022/day/10/
 
 class Solution_02 {
-    val instructions = readDataFromFile("/home/vgritsko/IdeaProjects/advc2022/src/main/resources/data_day_10_1")
+    private val instructions = readDataFromFile("/home/vgritsko/IdeaProjects/advc2022/src/main/resources/data_day_10_1")
 
-    val seq = sequence {
+    private val seq = sequence {
         yield(0)
         instructions.forEach {
             if (it.startsWith("addx")) {
