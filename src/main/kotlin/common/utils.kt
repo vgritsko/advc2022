@@ -1,18 +1,18 @@
 package common
 
-import java.io.File
+
 
 
 fun readDataFromFile(fileName: String): List<String> {
     val listOfStrings = mutableListOf<String>()
-    File(fileName).readLines().forEach {
+    java.io.File(fileName).readLines().forEach {
         listOfStrings.add(it)
     }
     return listOfStrings.toList()
 }
 
 fun readDataFromFileString(fileName: String): String {
-    return File(fileName).readText()
+    return java.io.File(fileName).readText()
 }
 
 
@@ -20,7 +20,7 @@ fun readDataFromFileDay1(fileName: String): Pair<Int, MutableList<Int>> {
     val listOfValues = mutableListOf<Int>()
     var sum = 0
     var maxSum = 0
-    File(fileName).readLines().forEach {
+    java.io.File(fileName).readLines().forEach {
         if (it.isNotBlank()) {
             sum += it.toInt()
         } else {
@@ -32,5 +32,7 @@ fun readDataFromFileDay1(fileName: String): Pair<Int, MutableList<Int>> {
 
     return Pair(maxSum, listOfValues)
 }
+
+
 
 
